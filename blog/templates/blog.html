@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+
+    <style>
+        /* CSS for blog cards */
+        .blog-card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .blog-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            margin-bottom: 10px;
+        }
+
+        .blog-card .author {
+            font-style: italic;
+        }
+        /* CSS for edit and delete buttons */
+        .edit-button,
+        .delete-button,
+        .add-button {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .edit-button:hover,
+        .delete-button:hover,
+        .add-button {
+            background-color: red;
+        }
+        .export-button {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #4ca5af;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .export-button:hover {
+        background-color: #186dbc;
+    }
+
+    </style>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Welcome to the Blog</h2>
+    <a href="{% url 'add_post' %}" class="add-button">Add New Post</a>
+    <br><br>
+    {% for post in posts %}
+        <div class="blog-card">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <p class="author">Author: {{ post.author.username }}</p>
+
+            <a href="{% url 'edit_post' post.id %}" class="edit-button">Edit</a>
+            <a href="{% url 'delete_post' post.id %}" class="delete-button">Delete</a>
+        </div>  
+        
+        <hr>
+    {% endfor %}
+    <a href="{% url 'export_to_word' %}" class="export-button">Export to Word</a>
+    <a href="{% url 'export_to_excel' %}" class="export-button">Export to Excel</a>
+
+
+{% endblock %}
+
+</body>
+</html>

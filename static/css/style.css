@@ -1,0 +1,32 @@
+ body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  #ingredients-container, #selected-ingredients-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .add-button, .remove-button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-button:hover, .remove-button:hover {
+    background-color: #45a049;
+  }
+  
+  #total-price {
+    font-weight: bold;
+  }
+   
+
+   
