@@ -1,10 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background-color:aqua;
+  background-color:lightblue;
 }
 
 h1, h2, h3 {
-  color: #333;
+  /* color: #333; */
 }
 
 #ingredients-container, #selected-ingredients-container {
