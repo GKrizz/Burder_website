@@ -1,0 +1,492 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+/* Variables */
+:root {
+    --yellow: #eacf4f;
+    --white: #fff;
+    --black: #000;
+    --light-color: #aaa;
+    --border: 0.2rem solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mixins */
+@function title-text($titleSize) {
+    @return {
+        font-size: $titleSize;
+        text-transform: uppercase;
+        color: var(--white);
+    };
+}
+
+@function grap-text($grapSize) {
+    @return {
+        font-size: $grapSize;
+        line-height: 2;
+        color: var(--light-color);
+    };
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+    overflow-x: hidden;
+}
+
+body {
+    background: url({% static 'images/background3.jpeg' %});
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+    background-size: cover;
+    margin-top: 7rem
+    /* margin-top: 7rem;
+    background: url(../image/background3.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
+
+section{
+   padding: 3rem 9%;
+}
+.btn{
+   display: inline-block;
+   margin-top: 1rem;
+   cursor: pointer;
+   color: white;
+   border: var(--border);
+   background: no-repeat;
+   font-size: 1.7rem;
+   padding: 1rem 3rem;
+}
+.btn:hover{
+   /* color:var(--black); */
+   background:#eacf4f;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: black;
+    padding: 3rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.header .icons {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.header .icons:hover {
+    color: var(--yellow);
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header .navbar a {
+    color: var(--white);
+    font-size: 2rem;
+    margin: 0 2rem;
+}
+
+.header .navbar a:hover {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    color: var(--yellow);
+}
+
+.space{
+   display: inline-block;
+   width: 16rem;
+}
+.logo{
+   position: absolute;
+   top: 4rem;
+   /* left: 48.5%; */
+   left: 48%;
+   transform: translatey(-50%);
+}
+img{
+   width: 9rem;
+}
+.search-form{
+   height: 7rem;
+   padding: 0 2rem;
+   border-top:var(--border);
+   display : flex;
+   align-items: center ;
+   background: black;
+   position: absolute;
+   top: 99%;
+   left: 0;
+   right: 0;
+   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.search-form.active{
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.search-form input{
+   width: 100%;
+   background: none;
+   text-transform: none;
+   font-size: 1.6rem;
+   /* color: $white; */
+   color: white;
+}
+.fa-times{
+   transform: rotate(180deg);
+}
+
+.home{
+   /* margin-top: 7rem;
+   background: url(../image/background3.jpeg) no-repeat;
+   background-size: cover;
+   background-position: center; */
+}
+.home .content{
+   max-width: 70rem;
+   text-align: center;
+   margin: 0 auto;
+}
+.home .content img{
+   width:82.1%;
+   /* mix-blend-mode: multiply; */
+   border: 0;
+   border-radius: 50%;
+}
+.home .content h3 {
+   font-size: 4rem;
+   text-transform: uppercase;
+   color: var(--white);
+}
+
+.home .content p {
+   font-size: 1.7rem;
+   line-height: 2;
+   color: var(--light-color);
+   padding: 2rem 0;
+}
+/* -------------------------------------------- */
+.service {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+   gap: 2rem;
+}
+
+.service .box {
+   text-align: center;
+   padding: 2rem;
+}
+
+.service .box i {
+   height: 7rem;
+   width: 7rem;
+   line-height: 7rem;
+   font-size: 2rem;
+   color: black;
+   background: yellow;
+   margin-bottom: 1rem;
+   border-radius: 50%;
+}
+
+.service .box h3 {
+   padding: 1rem 0;
+   font-size: 2rem;
+   text-transform: uppercase;
+   color: var(--white);
+}
+
+.service .box p {
+   font-size: 1.5rem;
+   line-height: 2;
+   /* color: var(--light-color); */
+   color: white;
+}
+
+/* -------------------------------------------- */
+.heading {
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.heading h3 {
+   font-size: 3rem;
+   text-transform: uppercase;
+   color: var(--white);
+   margin-top: 1rem;
+}
+
+.menu .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+   gap: 2rem;
+}
+
+.menu .box {
+   text-align: center;
+}
+
+.menu .box:hover img {
+   transform: translateY(1rem);
+}
+
+.menu .box img {
+   height: 12rem;
+
+}
+
+.menu .box .content {
+   padding: 1rem 0;
+}
+
+.menu .box .content .stars {
+   margin-bottom: 2rem;
+}
+
+.menu .box .content .stars i {
+   font-size: 1.7rem;
+   color: yellow;
+}
+
+.menu .box .content h3 {
+   font-size: 2rem;
+   text-transform: uppercase;
+   color: var(--white);
+}
+
+.menu .box .content .price {
+   font-size: 2rem;
+   line-height: 2;
+   color: var(--light-color);
+}
+
+/* ------------------------- */
+
+.about {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 3rem;
+}
+
+.about .image {
+   flex: 1 1 40rem;
+}
+
+.about .image img {
+   width: 100%;
+   border-radius: 50%;
+   margin-left: 5%;
+   
+}
+
+.about .content {
+   flex: 1 1 40rem;
+   margin-left: 10rem;
+}
+
+.about .content .title {
+   font-size: 2.5rem;
+}
+
+.about .content p {
+   font-size: 1.5rem;
+   padding: 2rem 0;
+   /* color: whitesmoke; */
+}
+
+.about .content .icons {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+   margin-bottom: 2rem;
+   margin-top: 1rem;
+}
+
+.about .content .icons h3 {
+   flex: 1 1 16rem;
+   font-size: 1.5rem;
+   
+}
+
+.about .content .icons h3 i {
+   padding-right: 0.5rem;
+   color: yellow;
+}
+.about .content .icons h3 i b{
+   color:orange;
+   margin-left: 2rem;
+}
+
+/* ------------------------- */
+.contact {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 3rem;
+}
+
+.contact .map {
+   flex: 1 1 40rem;
+}
+
+.contact .form {
+   flex: 1 1 40rem;
+}
+
+.contact .form .icons-container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+   margin-bottom: 3rem;
+}
+
+.contact .form .icons {
+   flex: 1 1 17rem;
+   text-align: center;
+}
+
+.contact .form .icons i {
+   height: 6rem;
+   width: 6rem;
+   line-height: 6rem;
+   border-radius: 50%;
+   background: yellow;
+   color: black;
+   font-size: 2rem;
+   margin-bottom: 1rem;
+}
+
+.contact .form .icons h3 {
+   padding: 1rem 0;
+   font-size: 2rem;
+}
+
+.contact .form .icons p {
+   font-size: 1.5rem;
+}
+
+.contact  form {
+   text-align: center;
+   color: whitesmoke;
+}
+
+.contact  form .box {
+   padding: 1.2rem 1.4rem;
+   font-size: 1.6rem;
+   /* color: rgb(252, 252, 252); */
+   /* background: white; */
+   color: #000;
+   border:var(--border);
+   text-transform: none;
+   width: 100%;
+   margin: 7rem 0;
+}
+
+.contact form .box:focus {
+   border-color: yellow;
+}
+
+.contact  form textarea {
+   height: 15rem;
+   resize: none;
+}
+
+/* ------------------------- */
+
+
+
+
+
+
+
+
+
+/* CSS code (style.css) */
+/* media queries */
+@media (max-width: 1200px) {
+   .header {
+       padding: 3rem;
+   }
+   
+   section{
+       padding: 3rem 9%;
+   }
+}
+
+@media (max-width: 991px) {
+   html {
+       font-size: 55%;
+   }
+
+   .header {
+       justify-content: flex-end;
+       gap: 2rem;
+   }
+
+   .header .logo {
+       transform: translateX(0);
+       left: 3rem;
+       top: 3px;
+   }
+
+   .header #menu-btn {
+       display: inline-block;
+   }
+
+   .header .navbar {
+       position: absolute;
+       top: 99%;
+       left: 0;
+       right: 0;
+       background: black;
+       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+
+   .navbar.active {
+       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   .header .navbar a {
+       display: block;
+       margin: 2rem;
+   }
+
+   .header .space {
+       display: none;
+   }
+}
+
+@media (max-width: 450px) {
+   html {
+       font-size: 50%;
+   }
+}

@@ -109,6 +109,24 @@ def save_file(request):
 def index(request):
     return render(request, 'index.html')
 
+def home(request):
+    return render(request, 'home.html')
+
+def menu(request):
+    return render(request, 'menu.html')
+
+def customize(request):
+    return render(request, 'customize.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+# def blogs(request):
+#     return render(request, 'blog.html')
+
 
 def export_to_word(request):
     posts = Post.objects.all()

@@ -10,10 +10,12 @@
             border-radius: 4px;
             padding: 10px;
             margin-bottom: 20px;
+            font-size: 20px;
+            color: white;
         }
 
         .blog-card h3 {
-            font-size: 18px;
+            font-size: 30px;
             margin-bottom: 10px;
         }
 
@@ -34,6 +36,8 @@
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
+            font-size: 18px;
+
         }
 
         .edit-button:hover,
@@ -60,7 +64,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Welcome to the Blog</h2>
+    <h2 style="color: #fff;text-align: center;margin-top: 4rem;font-size: 4rem;">Welcome to the Blog</h2>
     <a href="{% url 'add_post' %}" class="add-button">Add New Post</a>
     <br><br>
     {% for post in posts %}
@@ -75,8 +79,10 @@
         
         <hr>
     {% endfor %}
-    <a href="{% url 'export_to_word' %}" class="export-button">Export to Word</a>
-    <a href="{% url 'export_to_excel' %}" class="export-button">Export to Excel</a>
+    <div class="download" style="font-size: 20px;margin: 20px;">
+        <a href="{% url 'export_to_word' %}" class="export-button" style="margin-left:550px">Export to Word</a>
+        <a href="{% url 'export_to_excel' %}" class="export-button" style="margin-left:40px">Export to Excel</a>
+    </div>
 
 
 {% endblock %}

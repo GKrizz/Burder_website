@@ -3,8 +3,15 @@ from . import views
 from blog.views import save_file
 
 urlpatterns = [
-    # path('', views.home, name='home'),
-    path('', views.index, name='index'),
+    path('', views.home, name='home'),
+    path('menu/', views.menu, name='menu'),
+    path('customize/', views.customize, name='customize'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
+    # path('blogs/', views.blogs, name='blogs'),
+    # path('blogs/', views.blog, name='blog'),
+
+    path('index', views.index, name='index'),
     path('signup/', views.signup, name='signup'),
     path('login/', views.login, name='login'),
     path('blog/', views.blog, name='blog'),
