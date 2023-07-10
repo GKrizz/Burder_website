@@ -6,12 +6,14 @@
     <style>
         /* CSS for blog cards */
         .blog-card {
+            margin: 30px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            padding: 10px;
+            padding: 20px;
             margin-bottom: 20px;
             font-size: 20px;
             color: white;
+            /* margin: 1rem; */
         }
 
         .blog-card h3 {
@@ -67,12 +69,12 @@
     <h2 style="color: #fff;text-align: center;margin-top: 4rem;font-size: 4rem;">Welcome to the Blog</h2>
     <a href="{% url 'add_post' %}" class="add-button">Add New Post</a>
     <br><br>
-    {% for post in posts %}
+        {% for post in posts %}
         <div class="blog-card">
             <h3>{{ post.title }}</h3>
             <p>{{ post.content }}</p>
             <p class="author">Author: {{ post.author.username }}</p>
-
+    
             <a href="{% url 'edit_post' post.id %}" class="edit-button">Edit</a>
             <a href="{% url 'delete_post' post.id %}" class="delete-button">Delete</a>
         </div>  
